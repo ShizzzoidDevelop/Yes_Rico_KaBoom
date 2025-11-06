@@ -1,0 +1,24 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+dependencies {
+    implementation project(':core')
+    implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:${rootProject.ext.gdxVersion}"
+    implementation "com.badlogicgames.gdx:gdx-platform:${rootProject.ext.gdxVersion}:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-freetype-platform:${rootProject.ext.gdxVersion}:natives-desktop"
+}
+
+application {
+    mainClass = 'com.yesricokaboom.desktop.DesktopLauncher'
+    applicationDefaultJvmArgs = [
+        '-XstartOnFirstThread'
+    ]
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}

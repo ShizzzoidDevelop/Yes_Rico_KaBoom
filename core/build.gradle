@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation "com.badlogicgames.gdx:gdx:${rootProject.ext.gdxVersion}"
+    implementation "com.badlogicgames.gdx:gdx-freetype:${rootProject.ext.gdxVersion}"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}

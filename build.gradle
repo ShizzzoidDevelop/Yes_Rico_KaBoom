@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+ext {
+    gdxVersion = '1.12.1'
+    javaVersion = JavaVersion.VERSION_17
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+        options.release = 17
+    }
+}
